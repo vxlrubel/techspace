@@ -1,0 +1,11 @@
+{
+    "name": "techspace/theme",
+    "description": "A custom WordPress theme for Techspace.",
+    "type": "wordpress-theme",
+    "autoload": {
+        "psr-4": {
+            "Techspace\\": "inc/"
+        }
+    },
+    "require": {}
+}
