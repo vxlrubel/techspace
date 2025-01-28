@@ -11,6 +11,7 @@
 //  directly access denied
  defined('ABSPATH') || exit;
 
+ use Techspace\Frontend\Assets;
 // Load Composer autoloader
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
@@ -28,6 +29,20 @@ final class Techspace{
     
     public function __construct(){
         $this->define_constant();
+        
+        // initiate only for frontend1
+        if( !is_admin() ){
+            add_action( 'wp', [ $this, 'initiate_for_frontend' ] );
+        }
+    }
+    
+    /**
+     * initiate the frontend script only.
+     * 
+     * @return void
+     */
+    public function initiate_for_frontend(){
+        new Assets;
     }
 
     /**
