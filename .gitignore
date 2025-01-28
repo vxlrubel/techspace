@@ -1,0 +1,15 @@
+# Ignore Composer vendor directory
+/vendor/
+
+# Ignore Composer lock file (optional, depending on your workflow)
+composer.lock
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files and logs
+*.log
+*.tmp
+*.swp
+*.swo
