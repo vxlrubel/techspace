@@ -29,11 +29,25 @@ final class Techspace{
     
     public function __construct(){
         $this->define_constant();
-        
+
         // initiate only for frontend1
         if( !is_admin() ){
             add_action( 'wp', [ $this, 'initiate_for_frontend' ] );
+            add_action( 'init', [ $this, 'remove_emoji_styles'] );
         }
+
+    }
+
+    /**
+     * remove the emoji style from frontend.
+     * 
+     * @return void
+     */
+    public function remove_emoji_styles() {
+        remove_action('wp_head', 'wp_print_styles');
+        remove_action('wp_head', 'wp_print_head_scripts');
+        remove_action('wp_footer', 'print_emoji_detection_script');
+        remove_action('wp_print_styles', 'print_emoji_styles');
     }
     
     /**
