@@ -1,0 +1,1 @@
+:root{--hue: 240;--saturation: 100%;--lightness: 50%;--ts-color-primary: hsl(var(--hue), var(--saturation), var(--lightness))}.text-primary{color:var(--ts-color-primary)}
