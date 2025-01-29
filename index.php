@@ -10,6 +10,8 @@
     ?>
 </head>
 <body>
+
+    <div class="text-primary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, accusamus facere nulla ut odio molestias?</div>
     
     <?php wp_footer(); ?>
 </body>
