@@ -56,7 +56,7 @@ class Assets{
                 $script['src'],
                 $script['deps'],
                 TS_THEME_VERSION,
-                true
+                false
             );
         }
 
