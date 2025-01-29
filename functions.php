@@ -64,7 +64,7 @@ final class Techspace{
      * @return void
      */
     public function define_constant(){
-        define( 'TS_THEME_VERSION', '1.0' );
+        define( 'TS_THEME_VERSION', self::$version );
         define( 'TS_THEME_DIR', trailingslashit( get_template_directory() ) );
         define( 'TS_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
         define( 'TS_ASSETS', trailingslashit( TS_THEME_URI . 'assets' ) );
