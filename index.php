@@ -21,7 +21,7 @@
     <footer class="clearfix footer-area">
         <div class="copyrigh-area text-center">
             <div class="container">
-                Copyright @2025. All right reserved by <a href="javascript:void(0)" class="text-dark text-decoration-none">Techspace</a>
+                Copyright @2025. All right reserved by <a href="javascript:void(0)" class="text-dark text-decoration-none fw-bold">Techspace</a>
             </div>
         </div>
     </footer>
