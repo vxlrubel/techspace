@@ -17,6 +17,13 @@
         </div>
     </header>
 
+    <main class="main-area">
+        <div class="container">
+            <strong>Define Main Area</strong>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo neque odit voluptatem omnis facere impedit!</p>
+        </div>
+    </main>
+
 
     <footer class="clearfix footer-area">
         <div class="copyrigh-area text-center">
