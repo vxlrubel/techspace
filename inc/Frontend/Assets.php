@@ -56,7 +56,7 @@ class Assets{
                 $script['src'],
                 $script['deps'],
                 TS_THEME_VERSION,
-                false
+                true
             );
         }
 
@@ -94,6 +94,9 @@ class Assets{
      */
     public function get_styles(){
         $stylesheets = [
+            'bootstrap' => [
+                'src' => TS_ASSETS . $this->style_directory . 'bootstrap.min.css'
+            ],
             'ts-style' => [
                 'src' => TS_ASSETS . $this->style_directory . 'main.css'
             ]
@@ -111,9 +114,13 @@ class Assets{
      */
     public function get_scripts(){
         $scripts = [
+            'bootstrap' => [
+                'src'  => TS_ASSETS . $this->script_directory . 'bootstrap.bundle.min.js',
+                'deps' => []
+            ],
             'vuejs' => [
                 'src'  => TS_ASSETS . $this->script_directory . 'vue.global.prod.js',
-                'deps' => []
+                'deps' => ['bootstrap']
             ],
             'ts-script' => [
                 'src'  => TS_ASSETS . $this->script_directory . 'custom.js',
