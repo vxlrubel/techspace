@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php
-        echo apply_filters( 'ts_google_map', true );
+        apply_filters( 'ts_google_map', true );
         wp_head();
     ?>
 </head>
 <body>
 
-    <div class="text-primary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, accusamus facere nulla ut odio molestias?</div>
+    <header class="clearfix header-area text-primary">
+        <div class="container">
+            <strong>Header: </strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officia soluta officiis magni vitae reiciendis!
+        </div>
+    </header>
+
+
     
     <?php wp_footer(); ?>
 </body>
