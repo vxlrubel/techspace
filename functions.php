@@ -19,7 +19,15 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-
+/**
+ * Techspace Class
+ * 
+ * This class handles the initialization and functionality of the Techspace theme,
+ * including setting up custom post types, taxonomies, theme options, and page templates.
+ * It also manages theme-specific hooks and filters for integrating with WordPress core features.
+ *
+ * @package Techspace
+ */
 final class Techspace{
 
     // instance of the class
