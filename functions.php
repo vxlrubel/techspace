@@ -48,8 +48,26 @@ final class Techspace{
 
         // set home and blog pages
         add_action('after_switch_theme', [ $this, 'set_home_and_blog_pages' ] );
+
+        // set permalink
+        add_action('after_switch_theme', [ $this, 'set_permalink' ] );
     }
 
+    /**
+     * set permalink to post name
+     * 
+     * @return void
+     */
+    public function set_permalink() {
+        global $wp_rewrite;
+        
+        // Set permalink structure to "Post name"
+        update_option('permalink_structure', '/%postname%/');
+    
+        // Flush rewrite rules to apply the changes
+        $wp_rewrite->flush_rules();
+    }
+    
     /**
      * set home page and set the blog page when activate the theme.
      * 
