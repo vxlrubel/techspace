@@ -1,0 +1,75 @@
+.header-area {
+    height: var(--ts_header-height);
+    background-color: hsla(var(--hue), var(--saturation), var(--lightness), 0.2);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  .header-space {
+    height: var(--ts_header-height);
+    background-color: white;
+  }
+  .navigation-bar {
+    --navigation-bar-gap: 1.5625rem;
+    --logo-width: 7.5rem;
+    --menu-last-item-width: 13.75rem;
+    display: flex;
+    gap: var(--navigation-bar-gap);
+  }
+  @media (width >= 992px) {
+    .navigation-bar {
+      --menu-last-item-width: 9rem;
+    }
+  }
+  .logo {
+    width: var(--logo-width);
+  }
+  .menu {
+    width: calc(
+      100% -
+        calc(
+          calc(var(--logo-width) + var(--menu-last-item-width)) + calc(var(--navigation-bar-gap) * 2)
+        )
+    );
+  }
+  .menu-last-item {
+    width: var(--menu-last-item-width);
+    gap: 1rem;
+  }
+  .menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    color: var(--bs-dark);
+    transition: background-color 0.115s ease-in-out;
+  }
+  .mobile-menu a:hover,
+  .menu a:hover {
+    background: hsl(var(--hue), var(--saturation), 75%);
+    color: white !important;
+  }
+  .menu a.router-link-active.router-link-exact-active {
+    background: var(--color-primary);
+    color: white;
+  }
+  .header-area img {
+    max-width: 100%;
+  }
+  
+  .mobile-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: hsl(0, 0%, 100%);
+    top: calc(100% + 2px);
+  }
+  .mobile-menu a.router-link-active.router-link-exact-active {
+    background-color: var(--color-primary);
+    color: white !important;
+  }
+  .toggle-menu-button {
+    height: 38px;
+    width: 38px;
+  }
+  
