@@ -12,6 +12,7 @@
  defined('ABSPATH') || exit;
 
  use Techspace\Frontend\Assets;
+ use Techspace\Frontend\RegisterAction;
 // Load Composer autoloader
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
@@ -34,6 +35,9 @@ final class Techspace{
         if( !is_admin() ){
             add_action( 'wp', [ $this, 'initiate_for_frontend' ] );
             add_action( 'init', [ $this, 'remove_emoji_styles'] );
+
+            // register custom frontend action
+            $this->register_custom_action();
         }
 
         // theme setup
@@ -42,12 +46,19 @@ final class Techspace{
     }
 
     /**
+     * Register custom action for frontend.
+     */
+    public function register_custom_action(){
+        new RegisterAction();
+    }
+
+    /**
      * theme setup
      * 
      * @return void
      */
     public function setup_theme(){
-        
+
         // Enable title tag support
         add_theme_support( 'title-tag' );
 
