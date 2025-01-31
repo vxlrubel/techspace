@@ -1,5 +1,6 @@
 # Ignore Composer vendor directory
 /vendor/
+/test/
 
 # Ignore Composer lock file (optional, depending on your workflow)
 composer.lock
