@@ -1,11 +1,20 @@
-:root{
-    --hue: 240;
-    --saturation: 100%;
-    --lightness: 50%;
-    --ts-color-primary: hsl(var(--hue), var(--saturation), var(--lightness));
-    --ts_header-height: 3.5rem;
+:root {
+    --hue: 267;
+    --saturation: 70%;
+    --lightness: 44%;
+    --hue-2nd: 267;
+    --saturation-2nd: 70%;
+    --lightness-2nd: 55%;
+    --ts_header-height: 3.125rem;
     --ts_copyright-height: 3rem;
     --ts_bs-white: hsl(0, 0%, 100%);
     --ts_main-bg: hsl(210, 50%, 96%);
-}
+    --ts_color-primary: hsl(var(--hue), var(--saturation), var(--lightness));
+    --ts_color-secondary: hsl(var(--hue-2nd), var(--saturation-2nd), var(--lightness-2nd));
+  }
+  
+  *::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
 
