@@ -14,7 +14,72 @@
   }
   
   *::selection {
-    background-color: var(--color-primary);
+    background-color: var(--ts_color-primary);
     color: white;
   }
 
+
+  body {
+    min-height: 100vh;
+    transition:
+      color 0.5s,
+      background-color 0.5s;
+    line-height: 1.6;
+    font-family:
+      Inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #app {
+    min-height: 100dvh;
+  }
+  .animatio-fadein {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .btn-primary {
+    --bs-btn-bg: var(--ts_color-primary);
+    --bs-btn-border-color: var(--ts_color-primary);
+    --bs-btn-hover-bg: var(--ts_color-secondary);
+    --bs-btn-hover-border-color: var(--ts_color-secondary);
+    --bs-btn-active-bg: var(--ts_color-secondary);
+    --bs-btn-active-border-color: var(--ts_color-secondary);
+    --bs-btn-disabled-bg: var(--ts_color-primary);
+    --bs-btn-disabled-border-color: var(--ts_color-primary);
+  }
+  .text-primary {
+    color: var(--ts_color-primary) !important;
+  }
+  
+  .form-select:focus,
+  .form-control:focus {
+    border-color: var(--ts_color-primary);
+    background-color: hsl(var(--hue), var(--saturation), 97%);
+    box-shadow: 0 0 5px 0 var(--ts_color-primary);
+  }
+  .bg-primary {
+    background-color: var(--ts_color-primary) !important;
+  }
+  
