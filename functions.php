@@ -43,6 +43,39 @@ final class Techspace{
         // theme setup
         add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
 
+        // create page
+        add_action('after_switch_theme', [ $this, 'create_default_pages' ] );
+    }
+
+    /**
+     * create default pages
+     * 
+     * @return void
+     */
+    public function create_default_pages() {
+        $pages = [
+            'Home'      => 'page-home.php',
+            'Services'  => 'page-services.php',
+            'Portfolio' => 'page-portfolio.php',
+            'About'     => 'page-about.php',
+            'Blog'      => 'page-blog.php',
+            'Contact'   => 'page-contact.php',
+        ];
+    
+        foreach ($pages as $title => $template) {
+            if (!get_page_by_title($title)) {
+                $page_id = wp_insert_post([
+                    'post_title'   => $title,
+                    'post_content' => '',
+                    'post_status'  => 'publish',
+                    'post_type'    => 'page',
+                ]);
+    
+                if ($page_id && !is_wp_error($page_id)) {
+                    update_post_meta($page_id, '_wp_page_template', $template);
+                }
+            }
+        }
     }
 
     /**
