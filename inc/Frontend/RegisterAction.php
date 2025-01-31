@@ -18,7 +18,11 @@ class RegisterAction{
         // site logo
         add_action( 'site_logo', [ $this, 'site_logo' ], 10 );
 
+        // add desktop menu
         add_action( 'site_desktop_menu', [ $this, 'desktop_menu' ] );
+
+        // add 404 page content
+        add_action( 'page_404', [ $this, 'page_404' ] );
     }
 
     /**
@@ -58,6 +62,28 @@ class RegisterAction{
         }
     
         echo '</ul>';
-    }    
+    }
+
+    /**
+     * create content for not found page or 404 page
+     * 
+     * @return void
+     */
+    public function page_404(){ ?>
+        <div class="page-not-found">
+            <div class="error-page">
+                <span>4</span>
+                <span>0</span>
+                <span>4</span>
+            </div>
+            <div>
+                <span class="d-block fs-2 text-uppercase title">Page not found</span>
+                <span class="short-description">The requested URL was not found on this server.</span>
+            </div>
+            <div>
+                <a href="<?php echo esc_url( home_url( '/' ) );?>" class="btn btn-primary rounded-0 px-3 visit-home-page">Visit Home Page</a>
+            </div>
+        </div>
+    <?php }
 
 }
