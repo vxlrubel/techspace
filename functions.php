@@ -45,6 +45,28 @@ final class Techspace{
 
         // create page
         add_action('after_switch_theme', [ $this, 'create_default_pages' ] );
+
+        // set home and blog pages
+        add_action('after_switch_theme', [ $this, 'set_home_and_blog_pages' ] );
+    }
+
+    /**
+     * set home page and set the blog page when activate the theme.
+     * 
+     * @return void
+     */
+    public function set_home_and_blog_pages() {
+        $home_page = get_page_by_title('Home');
+        $blog_page = get_page_by_title('Blog');
+    
+        if ($home_page) {
+            update_option('page_on_front', $home_page->ID);
+            update_option('show_on_front', 'page');
+        }
+    
+        if ($blog_page) {
+            update_option('page_for_posts', $blog_page->ID);
+        }
     }
 
     /**
