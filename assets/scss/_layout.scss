@@ -1,12 +1,12 @@
 .header-area{
-    height: var(--ts_header-height);
+    height: var(--ts_header-height) !important;
     background-color: var(--ts_bs-white);
 }
 .main-area{
-    height: calc(100dvh - calc( var(--ts_header-height) + var(--ts_copyright-height) ) );
+    height: calc(100dvh - calc( var(--ts_header-height) + var(--ts_copyright-height) ) ) !important;
     background-color: var(--ts_main-bg);
 }
 .copyrigh-area{
-    height: var(--ts_copyright-height);
+    height: var(--ts_copyright-height) !important;
     background-color: var(--ts_bs-white);
 }
