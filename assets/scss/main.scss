@@ -1,2 +1,4 @@
-@import '_base';
-@import '_layout';
+@import 'base';
+@import 'layout';
+@import './components/header';
+@import './components/404';
