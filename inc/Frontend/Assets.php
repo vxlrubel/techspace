@@ -97,8 +97,11 @@ class Assets{
             'bootstrap' => [
                 'src' => TS_ASSETS . $this->style_directory . 'bootstrap.min.css'
             ],
-            'ts-style' => [
+            'ts-main-style' => [
                 'src' => TS_ASSETS . $this->style_directory . 'main.css'
+            ],
+            'ts-style' => [
+                'src' => get_stylesheet_uri()
             ]
         ];
 
