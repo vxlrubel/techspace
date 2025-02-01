@@ -25,33 +25,7 @@
 
         <div class="menu-last-item h-100 d-flex align-items-center justify-content-end">
           <button class="btn btn-primary rounded-0">Get Free Quote</button>
-          <button
-            class="btn btn-primary d-lg-none toggle-menu-button d-inline-flex align-items-center justify-content-center p-1 rounded-0"
-            @click.stop.prevent="toggleMenu = !toggleMenu"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="currentColor"
-              v-if="!toggleMenu"
-            >
-              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="currentColor"
-              v-else
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              />
-            </svg>
-          </button>
+          <?php do_action( 'toggler_button' ) ?>
         </div>
       </div>
     </div>
