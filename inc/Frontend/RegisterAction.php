@@ -55,14 +55,23 @@ class RegisterAction{
             'Contact'   => home_url('/contact'),
         ];
     
+        // Get the current requested URL path
+        $current_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    
         echo '<ul class="d-flex align-items-center justify-content-center gap-1 h-100 list-unstyled p-0 m-0">';
         
         foreach ($menu_items as $label => $url) {
-            printf('<li><a href="%s">%s</a></li>', esc_url($url), esc_html($label));
-        }
+
+            $menu_path    = trim(parse_url($url, PHP_URL_PATH), '/');
+            $active_class = ($current_path === $menu_path) ? ' class="active"' : '';
     
+            printf('<li%s><a href="%s">%s</a></li>', $active_class, esc_url($url), esc_html($label));
+        }
+
         echo '</ul>';
     }
+    
+    
 
     /**
      * create content for not found page or 404 page
