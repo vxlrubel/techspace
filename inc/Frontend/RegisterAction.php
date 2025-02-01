@@ -126,6 +126,11 @@ class RegisterAction{
         </div>
     <?php }
 
+    /**
+     * Create the toggler button for manage mobile menu toggler
+     * 
+     * @return void
+     */
     public function toggler_button(){ ?>
         <button
             class="btn btn-primary d-lg-none toggle-menu-button d-inline-flex align-items-center justify-content-center p-1 rounded-0"
