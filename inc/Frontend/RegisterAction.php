@@ -39,6 +39,9 @@ class RegisterAction{
 
         // add 404 page content
         add_action( 'page_404', [ $this, 'page_404' ] );
+
+        // toggler button
+        add_action( 'toggler_button', [ $this, 'toggler_button' ] );
     }
 
     /**
@@ -121,6 +124,36 @@ class RegisterAction{
                 <a href="<?php echo esc_url( home_url( '/' ) );?>" class="btn btn-primary rounded-0 px-3 visit-home-page">Visit Home Page</a>
             </div>
         </div>
+    <?php }
+
+    public function toggler_button(){ ?>
+        <button
+            class="btn btn-primary d-lg-none toggle-menu-button d-inline-flex align-items-center justify-content-center p-1 rounded-0"
+            @click.stop.prevent="toggleMenu = !toggleMenu"
+            >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="currentColor"
+                v-if="!toggleMenu"
+            >
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="currentColor"
+                v-else
+            >
+                <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+            </svg>
+        </button>
     <?php }
 
 }
