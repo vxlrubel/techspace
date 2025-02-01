@@ -57,56 +57,7 @@
     </div>
     <div class="mobile-menu shadow border-bottom d-lg-none" v-if="toggleMenu">
       <div class="container py-3">
-        <ul class="m-0 p-0">
-          <li>
-            <a
-              class="text-dark text-decoration-none py-1 d-block px-3"
-              href="/"
-              @click.prevent="toggleMenu = !toggleMenu"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-dark text-decoration-none py-1 d-block px-3"
-              href="/services"
-              @click.prevent="toggleMenu = !toggleMenu"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-dark text-decoration-none py-1 d-block px-3"
-              href="/portfolio"
-              @click.prevent="toggleMenu = !toggleMenu"
-              >Portfolio</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-dark text-decoration-none py-1 d-block px-3"
-              href="/about"
-              @click.prevent="toggleMenu = !toggleMenu"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-dark text-decoration-none py-1 d-block px-3"
-              href="/blog"
-              @click.prevent="toggleMenu = !toggleMenu"
-              >Blog</a
-            >
-          </li>
-          <li>
-            <a
-              class="text-dark text-decoration-none py-1 d-block px-3"
-              href="/contact"
-              @click.prevent="toggleMenu = !toggleMenu"
-              >Contact</a
-            >
-          </li>
-        </ul>
+        <?php do_action( 'site_mobile_menu' ); ?>
       </div>
     </div>
   </header>
