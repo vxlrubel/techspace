@@ -27,12 +27,15 @@ class RegisterAction{
             'Blog'      => home_url('/blog'),
             'Contact'   => home_url('/contact'),
         ];
-        
+
         // site logo
         add_action( 'site_logo', [ $this, 'site_logo' ], 10 );
 
         // add desktop menu
         add_action( 'site_desktop_menu', [ $this, 'desktop_menu' ] );
+
+        // add mobile menu
+        add_action( 'site_mobile_menu', [ $this, 'mobile_menu' ] );
 
         // add 404 page content
         add_action( 'page_404', [ $this, 'page_404' ] );
@@ -75,9 +78,29 @@ class RegisterAction{
 
         echo '</ul>';
     }
-    
-    
 
+    /**
+     * STatic mobile menu
+     * 
+     * @return void
+     */
+    public function mobile_menu() {
+    
+        // Get the current requested URL path
+        $current_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    
+        echo '<ul class="p-0 m-0 list-unstyled">';
+        
+        foreach ( $this->menu_items as $label => $url ) {
+
+            $menu_path    = trim(parse_url($url, PHP_URL_PATH), '/');
+            $active_class = ($current_path === $menu_path) ? ' class="active"' : '';
+            printf('<li%s><a href="%s" class="text-dark text-decoration-none py-2 d-block px-3">%s</a></li>', $active_class, esc_url($url), esc_html($label));
+        }
+
+        echo '</ul>';
+    }
+    
     /**
      * create content for not found page or 404 page
      * 
