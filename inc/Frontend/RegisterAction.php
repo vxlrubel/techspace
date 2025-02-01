@@ -14,7 +14,20 @@ defined('ABSPATH') || exit;
 
 class RegisterAction{
     
+    public $menu_items = [];
+    
     public function __construct(){
+
+        // menu items
+        $this->menu_items = [
+            'Home'      => home_url('/'),
+            'Services'  => home_url('/services'),
+            'Portfolio' => home_url('/portfolio'),
+            'About'     => home_url('/about'),
+            'Blog'      => home_url('/blog'),
+            'Contact'   => home_url('/contact'),
+        ];
+        
         // site logo
         add_action( 'site_logo', [ $this, 'site_logo' ], 10 );
 
@@ -46,21 +59,13 @@ class RegisterAction{
      * @return void
      */
     public function desktop_menu() {
-        $menu_items = [
-            'Home'      => home_url('/'),
-            'Services'  => home_url('/services'),
-            'Portfolio' => home_url('/portfolio'),
-            'About'     => home_url('/about'),
-            'Blog'      => home_url('/blog'),
-            'Contact'   => home_url('/contact'),
-        ];
     
         // Get the current requested URL path
         $current_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     
         echo '<ul class="d-flex align-items-center justify-content-center gap-1 h-100 list-unstyled p-0 m-0">';
         
-        foreach ($menu_items as $label => $url) {
+        foreach ( $this->menu_items as $label => $url ) {
 
             $menu_path    = trim(parse_url($url, PHP_URL_PATH), '/');
             $active_class = ($current_path === $menu_path) ? ' class="active"' : '';
