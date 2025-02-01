@@ -43,8 +43,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  #app {
-    min-height: 100dvh;
+  .main-area{
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards 0.3s;
   }
   .animatio-fadein {
     animation: fadeIn 0.5s ease-in-out forwards;

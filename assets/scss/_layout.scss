@@ -3,7 +3,7 @@
     background-color: var(--ts_bs-white);
 }
 .main-area{
-    height: calc(100dvh - calc( var(--ts_header-height) + var(--ts_copyright-height) ) ) !important;
+    height: calc(100dvh - var(--ts_header-height) ) !important;
     background-color: var(--ts_main-bg);
 }
 .copyrigh-area{

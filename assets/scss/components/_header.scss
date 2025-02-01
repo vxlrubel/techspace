@@ -49,8 +49,8 @@
     background: hsl(var(--hue), var(--saturation), 75%);
     color: white !important;
   }
-  .menu a.router-link-active.router-link-exact-active {
-    background: var(--color-primary);
+  .menu li.active > a {
+    background: var(--ts_color-primary);
     color: white;
   }
   .header-area img {
@@ -64,8 +64,16 @@
     background: hsl(0, 0%, 100%);
     top: calc(100% + 2px);
   }
-  .mobile-menu a.router-link-active.router-link-exact-active {
-    background-color: var(--color-primary);
+  .mobile-menu li {
+    a{
+      background-color: hsl(0, 0%, 97%);
+      border-top: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
+    }
+  }
+  .mobile-menu li.active > a{
+    border-color: var(--ts_color-primary);
+    background-color: var(--ts_color-primary);
     color: white !important;
   }
   .toggle-menu-button {
